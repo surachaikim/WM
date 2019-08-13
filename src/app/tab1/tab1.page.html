@@ -1,0 +1,138 @@
+<ion-header>
+  <ion-toolbar  >
+    <ion-title class="font1">
+      Dashbord
+    </ion-title>
+    
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content color="Light "  >
+
+
+
+    <ion-refresher slot="fixed" 
+  (ionRefresh)="ionRefresh($event)" 
+  (ionPull)="ionPull($event)" 
+  (ionStart)="ionStart($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+    <ion-card color="tertiary" style="height: 120px" class="card font1" >
+      
+        <ion-grid>
+            <ion-row>
+              <ion-col size="7">
+                  <ion-card-content >
+                      <h1 style="font-size: 23px"><b>25,000.00 </b></h1><br>
+                     <h2 style="font-size: 20px">ยอดเงินวันนี้</h2>  
+                    </ion-card-content>
+              </ion-col>
+              <ion-col>
+                <br>
+                <div text-cnter>
+                    <ion-icon  name="cash" style="font-size: 60px"></ion-icon>
+                </div>
+                 
+              </ion-col>
+         
+            </ion-row>
+        </ion-grid>
+    
+      </ion-card>
+
+
+    <ion-card color="warning" style="height: 120px" class="card font1" >
+      
+        <ion-grid>
+            <ion-row>
+              <ion-col size="7">
+                  <ion-card-content >
+                      <h1 style="font-size: 23px"><b>15,000.00</b> </h1><br>
+                     <h2 style="font-size: 20px">ชำระหนี้</h2>  
+                    </ion-card-content>
+              </ion-col>
+              <ion-col>
+                <br>
+                <div text-cnter>
+                    <ion-icon  name="trending-up" style="font-size: 60px"></ion-icon>
+                </div>
+                 
+              </ion-col>
+         
+            </ion-row>
+        </ion-grid>
+      </ion-card>
+
+      <ion-card color="success" style="height: 120px" class="card font1" >
+      
+      
+          <ion-grid>
+              <ion-row>
+                <ion-col size="7">
+                    <ion-card-content >
+                        <h1 style="font-size: 23px"><b>5,000.00</b> </h1><br>
+                       <h2 style="font-size: 20px">ฝากเงิน</h2>  
+                      </ion-card-content>
+                </ion-col>
+                <ion-col>
+                  <br>
+                  <div text-cnter>
+                      <ion-icon  name="swap" style="font-size: 60px"></ion-icon>
+                  </div>
+                   
+                </ion-col>
+           
+              </ion-row>
+          </ion-grid>
+        </ion-card>
+
+        <ion-card color="secondary" style="height: 120px" class="card font1" >
+      
+      
+            <ion-grid>
+                <ion-row>
+                  <ion-col size="7">
+                      <ion-card-content >
+                          <h1 style="font-size: 23px"><b>5,000.00</b> </h1><br>
+                         <h2 style="font-size: 20px">ซื้อหุ้น</h2>  
+                        </ion-card-content>
+                  </ion-col>
+                  <ion-col>
+                    <br>
+                    <div text-cnter>
+                        <ion-icon  name="stats" style="font-size: 60px"></ion-icon>
+                    </div>
+                     
+                  </ion-col>
+             
+                </ion-row>
+            </ion-grid>
+          </ion-card>
+
+
+
+ <div text-center>
+   <p class="font1">ณ วันที่ {{DateToday}} เวลา {{Time}} น.</p>
+
+ </div>
+
+
+
+
+ <!--<ion-button expand="block" (click)="getDataStandard()">getDataStandard</ion-button>
+  <ion-button expand="block" (click)="getDataNativeHttp()">getDataNativeHttp</ion-button>
+  <ion-button expand="block" (click)="getDataEverywhere()">getDataEverywhere</ion-button>
+ 
+  <ion-list>
+    <ion-item button detail lines="inset" *ngFor="let film of data">
+      {{ film.title }}
+    </ion-item>
+  </ion-list>-->
+</ion-content>

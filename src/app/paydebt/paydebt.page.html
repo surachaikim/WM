@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-toolbar color="primary" >
+      <ion-buttons slot="end" (click)="closeModel()" >
+        <ion-icon style="font-size: 30px" name="close"></ion-icon>
+        </ion-buttons>
+       
+    <ion-title class="font1">ชำระหนี้</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="font1 Bg"  >
+
+<div padding>
+
+    <label>
+       บริษัท :  {{VFName}}<br>
+        รหัสผู้ใช้งาน : {{UserId}}
+      </label>
+      <hr color="balck">
+</div>
+
+
+
+<div >
+
+
+<ion-slides pager="true" (ionSlideDidChange)="onSlideChanged()" (ionSlidePrevStart)="ionSlidePrevStart()"    >
+  <ion-slide *ngFor="let item of AddLoan ; let i = index"  >
+   
+
+
+
+     <!--<div class="card" style="background-color: #f3b42d">
+          <h4  text-left  style="font-size: 20px">เลขที่สัญญา :&nbsp;{{item.AccountNo}} </h4><br>
+          <div text-left b>
+              &nbsp;   <label style="font-size: 15px"><b>ชื่อ-สกุล:</b>&nbsp;{{item.PersonName}}  </label><br>
+              &nbsp;   <label style="font-size: 15px"><b> ประเภท:</b>&nbsp;{{item.TypeLoanName}}  </label><br>
+              &nbsp;   <label style="font-size: 15px"><b>  ยอดกู้:</b>&nbsp; {{item.TotalAmount|currency:' '}} </label><br>
+              
+          </div><br><br><br>
+          <div class="container" style="background-color: white">
+              <p   text-center  style="font-size: 14px"  class="font1">ณ วันที่ {{DateToday}} เวลา {{Time}} น.</p>
+              <ion-input  style="font-size:22px;color: rgb(33, 95, 8)" class="font1" placeholder="จำนวนเงิน" text-center   ></ion-input>
+              <hr color="balck" width=70%>
+<p style="font-size: 12px" text-center>ระบบจะส่งหลักฐานทาง SMS</p>
+          </div>
+        </div>--> 
+
+      <ion-card  class="card" >
+             
+          <ion-card-content class="font1">
+             <h4  text-left  style="font-size: 20px" >เลขที่สัญญา :&nbsp;{{item.AccountNo}} </h4>
+     
+             <br>
+              <div text-left>
+                  &nbsp;   <label style="font-size: 15px" ><b>ชื่อ-สกุล:</b>&nbsp;{{item.PersonName}}  </label><br>
+                  &nbsp;   <label style="font-size: 15px"><b> ประเภท:</b>&nbsp;{{item.TypeLoanName}}  </label><br>
+                  &nbsp;   <label style="font-size: 15px"><b> ยอดกู้คงเหลือ:</b>&nbsp;{{item.NewBalance|currency:' '}} </label><br>
+                  
+                  &nbsp;   <label style="font-size: 15px"><b>  ค่าปรับ:</b>&nbsp; {{item.Mulct|currency:' '}} </label><br>
+                  &nbsp;   <label style="font-size: 15px"><b>  ค่าติดตาม:</b>&nbsp; {{item.TrackFee|currency:' '}} </label><br>
+                  &nbsp;   <label style="font-size: 15px"><b>  ชำระล่าสุด:</b>&nbsp; {{item.DateLastPay | date:'dd-MM-yyyy' }} </label><br>
+                  &nbsp;   <label style="font-size: 15px"><b> เงินต้นที่ต้องชำระ:</b>&nbsp;{{item.TermCapital|currency:' '}} </label><br>
+                  &nbsp;   <label style="font-size: 15px"><b> ดอกเบี้ยที่ต้องชำระ:</b>&nbsp;{{item.RealInterest|currency:' '}} </label><br>
+                  &nbsp;   <label style="font-size: 15px"><b>  ยอดที่ต้องชำระ:</b>&nbsp; {{item.MinPayment|currency:' '}} </label><br>
+                  
+              </div>
+             
+                
+            
+          </ion-card-content>
+        </ion-card>
+  </ion-slide>
+
+
+</ion-slides>
+
+
+</div>
+<p   text-center  style="font-size: 14px"  class="font1">ณ วันที่ {{DateToday}} เวลา {{Time}} น.</p>
+
+
+
+<br>
+
+
+
+
+<form  #form="ngForm" (ngSubmit)="Register(form)" class="font1">
+  
+  <div text-center>
+      <ion-checkbox color="secondary" [(ngModel)]="Checked" (ionChange)="ChkPay()"></ion-checkbox> &nbsp;ชำระเต็มจำนวน
+    </div>
+
+  
+         
+            <ion-input    name="Payresult" type="tel" inputmode="numeric" min="0" max="1000" (keyup)="updateList($event)"    style="font-size:22px;color: rgb(33, 95, 8)" class="font1" [(ngModel)]="Payresult"    placeholder="จำนวนเงินรับชำระ" text-center  ngModel required  ></ion-input>
+      
+</form>
+
+
+ 
+  <!--<h4 text-center>รับเงินเพื่อ ชำระหนี้</h4>-->
+  <hr color="balck" width=70%>
+  <p style="font-size: 12px" text-center>ระบบจะส่งหลักฐานทาง SMS</p>
+
+
+
+
+<div padding>
+    <ion-button  expand="full" [disabled]="form.invalid" style="height: 50px;font-size: 19px" class="font1"   color="primary" expand="block"  (click)="SaveLoan()"  >บันทึก</ion-button>
+  
+  </div>
+
+ <!-- <ion-slide> <ion-list inset>
+      <ion-item *ngFor="let item of DataLoan" (click)="getItem(item.TypeLoanName)">
+        {{ item.TypeLoanName }}
+      </ion-item>
+  </ion-list> </ion-slide>-->
+
+</ion-content>

@@ -1,0 +1,104 @@
+<ion-header *ngIf="state" >
+  <ion-toolbar text-end>
+    <ion-icon name="share-alt" style="font-size: 30px" (click)="Share()"></ion-icon> &nbsp; &nbsp;
+    <!--<ion-icon ios="ios-download" md="md-download"  style="font-size: 30px" ></ion-icon>-->
+    <ion-icon name="checkmark" style="font-size: 30px" (click)="closeModel()"></ion-icon> &nbsp;
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="font1 Bg" padding>
+
+  <div text-center>
+    <img src="assets\img\CHK.png" width="60px" height="60px">
+  </div>
+  <h2 text-center style="color: green">ชำระเงินสำเร็จ</h2>
+  <p text-center style="font-size: 11px">เลขที่อ้างอิง : {{DocNo}}</p>
+  <p text-center style="font-size: 11px">{{DateToday}} {{Time}}</p>
+
+  <hr style="height:1px;border:none;color:rgb(202, 202, 202);background-color:rgb(194, 192, 192);" width=70%>
+
+  <br>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="2">
+        <h4 style="font-size: 14px">จาก</h4>
+      </ion-col>
+      <ion-col>
+        <h4 style="font-size: 14px" text-right>{{name}}</h4>
+        <h4 style="font-size: 11px" text-right>{{Acc}}</h4>
+      </ion-col>
+
+    </ion-row>
+    <hr style="height:1px;border:none;color:rgb(202, 202, 202);background-color:rgb(194, 192, 192);" width=100%>
+    <ion-row>
+      <ion-col size="2">
+        <h4 style="font-size: 14px">ไปยัง</h4>
+      </ion-col>
+      <ion-col>
+        <h4 style="font-size: 14px" text-right>{{VFName}}</h4>
+      </ion-col>
+
+    </ion-row>
+
+    <hr style="height:1px;border:none;color:rgb(202, 202, 202);background-color:rgb(194, 192, 192);" width=100%>
+
+
+    <ion-row>
+      <ion-col size="3">
+        <h4 style="font-size: 14px">เงินต้น</h4>
+      </ion-col>
+      <ion-col>
+        <h4 style="font-size: 14px" text-right>{{Capital|currency:' '}}</h4>
+      </ion-col>
+
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <h4 style="font-size: 14px">ดอกเบี้ย</h4>
+      </ion-col>
+      <ion-col>
+        <h4 style="font-size: 14px" text-right>{{LoanInterest|currency:' '}}</h4>
+      </ion-col>
+
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <h4 style="font-size: 14px">ค่าปรับ</h4>
+      </ion-col>
+      <ion-col>
+        <h4 style="font-size: 14px" text-right>{{Mulct|currency:' '}}</h4>
+      </ion-col>
+
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <h4 style="font-size: 14px">ค่าติดตาม</h4>
+      </ion-col>
+      <ion-col>
+        <h4 style="font-size: 14px" text-right>{{TrackFee|currency:' '}}</h4>
+      </ion-col>
+
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <h4 style="font-size: 14px">จำนวนที่ชำระ</h4>
+      </ion-col>
+      <ion-col>
+        <h4 style="font-size: 14px" text-right>{{Payresult|currency:' '}}</h4>
+      </ion-col>
+    
+    </ion-row>
+
+
+  </ion-grid>
+
+
+ <!-- <div  text-center >
+            <ion-button  color="warning"  expand="block"  (click)="Share()"   >แชร์</ion-button>
+            <ion-button   color="warning"  expand="block"  (click)="closeModel()" >กลับหน้ารับชำระ</ion-button>
+        </div>
+-->
+
+
+</ion-content>

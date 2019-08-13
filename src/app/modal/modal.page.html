@@ -1,0 +1,47 @@
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-title>ยืนยันการชำระ</ion-title>
+    <ion-buttons slot="end" (click)="closeModel()" >
+        <ion-icon style="font-size: 30px" name="close"></ion-icon>
+        </ion-buttons>
+  </ion-toolbar>
+</ion-header>-->
+
+<ion-content class="font1 Bg" *ngFor="let item of LoanPaymentRes">
+  <br>
+  <div text-center>
+     <!--<ion-icon name="close-circle" style="font-size: 40px" (click)="closeModel()"></ion-icon> &nbsp;--> 
+     <img src="../../assets/img/pay.png" width="80px" height="80px">
+  </div>
+   
+  <br>
+  <div text-center>
+      <h2>เลขที่สัญญา : {{item.AccountNo}}</h2>
+  </div>  
+ 
+    <ion-grid >
+        <ion-row>
+          <ion-col>
+              <h3>ชำระเงินต้น</h3> 
+           <h3>ชำระดอกเบี้ย</h3> 
+           <h3>ค่าปรับล่าช้า</h3>
+           <h3>ค่าติดตาม</h3>  
+           <h3 style="font-size: 20px;color:rgb(54, 134, 187)">ยอดที่ชำระ</h3>  
+          </ion-col>
+          <ion-col>
+              <h3 text-right>{{item.Capital |currency:' '}} </h3>
+            <h3 text-right>{{item.LoanInterest|currency:' '}} </h3>
+            <h3 text-right>{{item.Mulct|currency:' '}}</h3>
+            <h3 text-right>{{item.TrackFee|currency:' '}}</h3>
+            <h3  text-right style="font-size:20px;color:rgb(54, 134, 187)">{{Payresult |currency:' '}} </h3>
+          </ion-col>
+      
+        </ion-row>
+        </ion-grid>
+ฺ<br>ฺ<br>
+        <div padding >
+            <ion-button   style="height: 50px;font-size: 19px"   color="primary" expand="block" (click)="AddLoanpay()"   >ยืนยันการชำระ</ion-button>
+          
+          </div>
+
+</ion-content>

@@ -1,0 +1,52 @@
+<ion-content  class="Bg font1">
+
+
+
+    <form  #form="ngForm" (ngSubmit)="Register(form)" class="font1">
+      <ion-grid>
+        <ion-row color="primary" justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+            <br><br>
+         <div text-center >
+        <img src="assets\img\logo-wm+.png" width="60px" height="60px">
+    </div>
+           
+            <div text-center>
+              <h3>ลงทะเบียน</h3>
+            </div>
+            <div padding >
+                <ion-item class="textbox">
+                  
+                    <ion-input   class="font1" name="Id" type="text" placeholder="เลขที่สมาชิก" [(ngModel)]="CustomerCode" ngModel required (change)='onChange($event.target.value)'>
+                      </ion-input>
+                  </ion-item>
+     
+              <ion-item *ngFor="let item of CustomeDetail" class="textbox"  >
+          <p class="font1">บริษัท : {{item.CustomerName}}</p>  
+              </ion-item>
+         
+  
+              <ion-item class="textbox">
+                <ion-input  class="font1" name="Fname" type="text" placeholder="ชื่อ"  [(ngModel)]="Fname" ngModel required></ion-input>
+              </ion-item>
+              <ion-item  class="textbox" >
+                <ion-input  class="font1" name="Lname" type="text" placeholder="นามสกุล"  [(ngModel)]="Lname" ngModel required></ion-input>
+              </ion-item>
+              <ion-item class="textbox">
+                <ion-input class="font1"  name="Email" type="email"  placeholder="your@email.com" [(ngModel)]="Email" ngModel required></ion-input>
+              </ion-item>
+              <ion-item class="textbox">
+                <ion-input  class="font1"    name="Mobile" maxlength="10" type="tel" placeholder="เบอร์โทร *ใส่เฉพาะตัวเลข" [(ngModel)]="Mobile" ngModel required ></ion-input>
+              </ion-item>
+            </div>
+            <div padding>
+              <ion-button  class="font1" color="medium" size="large" type="submit" [disabled]="form.invalid" (click)="AddRegister()" expand="block"    >ตกลง</ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  
+  
+   
+  </ion-content>

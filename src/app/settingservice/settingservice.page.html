@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title>ตั้งค่าระบบ</ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button ></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="fixed">Service:</ion-label>
+    <ion-input [(ngModel)]="Service" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="fixed">UserName:</ion-label>
+    <ion-input [(ngModel)]="UserName" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="fixed">Password:</ion-label>
+    <ion-input [(ngModel)]="PassWord"></ion-input>
+  </ion-item>
+  
+
+  <div padding>
+      <ion-button style="height: 50px;font-size: 19px" class="font1"   color="primary" expand="block"  (click)="Setservice()"  >บันทึก</ion-button>
+    
+    </div>
+</ion-content>

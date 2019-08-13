@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-row>
+    <ion-col text-start padding-top>
+ 
+        <ion-icon ios="ios-arrow-back" md="md-arrow-back" style="font-size: 30px" (click)="back()"></ion-icon>
+          
+        
+  
+    </ion-col>
+
+    <ion-col text-end>
+      <ion-button (click)="loadMapnow()" shape="round" fill="outline">
+        <ion-icon slot="start" name="locate"></ion-icon>
+        ตำแหน่งของฉัน
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-header>
+<ion-content>
+ 
+  <div class="map-wrapper">
+
+      <ion-spinner name="dots" class="spinercenter" *ngIf="show"></ion-spinner>
+ <!--<div id="map_center">
+      <img src="../../assets/img/marker1.ico" width="32px" height="32px" />
+    </div>-->   
+    <div #map id="map"></div>
+  </div>
+  <div id="address">
+    <span>{{address}}</span>
+  </div>
+ 
+  <div text-center padding>
+    <ion-button expand="full"  (click)="updatemap()" class="font1">อัพเดทตำแหน่ง</ion-button>
+    <ion-button expand="full"  (click)="mapNv()" class="font1">นำทาง</ion-button>
+  </div>
+ 
+</ion-content>

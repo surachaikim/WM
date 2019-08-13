@@ -1,0 +1,45 @@
+
+.welcome-card ion-img {
+    max-height: 35vh;
+    overflow: hidden;
+  }
+  .noscroll {
+    --overflow: hidden;
+  }
+  .avtar{
+    width:150px !important;
+    height: 150px !important;
+    margin:0 auto;
+    overflow: hidden !important;
+    border-radius: 50% !important;
+   border: 1px solid #0c2553 !important;
+   box-shadow: 5px;
+  }
+ 
+  .textinfo{
+    margin:0 auto;
+  }
+  .Bt{
+    background:burlywood;
+  //border-radius: 60%;
+  box-shadow: 5px;
+  //border: 2px solid #9fbaec !important;
+  }
+
+  .Bg{
+   --background: url(../../assets/img/BG002.jpg) 0 0/100% 100% no-repeat;
+  
+  }
+
+ 
+  
+  .bg1{
+    
+    background-size: 0 0 100% 100%;
+    background-repeat: no-repeat;
+    color: black;
+  
+  }
+  
+  
+  

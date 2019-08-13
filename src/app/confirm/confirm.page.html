@@ -1,0 +1,46 @@
+<ion-content  class="Bg font1">
+
+
+
+  <form  #form="ngForm" (ngSubmit)="Register(form)" class="font1">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <br><br>
+       <div text-center >
+      <img src="assets\img\logo-wm+.png" width="60px" height="60px">
+  </div>
+         
+          <div text-center>
+            <h3>ยืนยันระบบ</h3>
+          </div>
+          <div padding >
+              <ion-item class="textbox">
+                
+                  <ion-input  text-center  class="font1" name="Id" type="text" value="{{Ref}}"  placeholder="รหัสอ้างอิง" [(ngModel)]="Ref" ngModel required >
+                    </ion-input>
+                </ion-item>
+   
+
+            <ion-item class="textbox">
+              <ion-input text-center class="font1" name="confirm" type="number"  placeholder="ยืนยันรหัส"  [(ngModel)]="referencecode" ngModel required></ion-input>
+            </ion-item>
+            <ion-item  class="textbox" >
+              <ion-input text-center class="font1" name="๊username" type="text" placeholder="ชื่อผู้ใช้งาน"  [(ngModel)]="username" ngModel required></ion-input>
+            </ion-item>
+            <ion-item class="textbox">
+              <ion-input  text-center class="font1"  name="password" type="password" placeholder="รหัสผู้ใช้งาน" [(ngModel)]="password" ngModel required></ion-input>
+            </ion-item>
+
+          </div>
+          <div padding>
+            <ion-button  class="font1" color="medium" size="large" type="submit" [disabled]="form.invalid"  (click)="AddActive()" expand="block"    >ตกลง</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+
+ 
+</ion-content>

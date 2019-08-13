@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar class="font1" style="height: 110px">
+      <ion-title > 
+
+      <ion-item color="primary" >
+          <ion-thumbnail slot="start">
+              <img src="assets/img/company.png" width="80px" height="100px">
+      
+            </ion-thumbnail>
+       
+          <ion-label >
+           <h3 class="font1">บริษัท : {{VFName}}</h3>
+           <h4 class="font1">รหัสผู้ใช้งาน : {{UserId}}</h4>
+           <h4 class="font1">ยอดเงินทั้งหมด  {{amount |currency:' '}}   บาท</h4>
+           <p class="font1" text-right  style="font-size: 11px">ข้อมูล ณ {{DateToday}}  เวลา {{Time}} น.</p>
+         
+          </ion-label>
+       
+          
+      
+        </ion-item>
+      </ion-title > 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+
+
+
+  <ion-refresher slot="fixed"  
+  
+  (ionRefresh)="ionRefresh($event)" 
+  (ionPull)="ionPull($event)" 
+  (ionStart)="ionStart($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="กำลังดึงข้อมูล...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <div (scroll)="scrollPosition"  class="font1" style="font-size:12px">
+             
+        <h6 text-center> วันที่ชำระ : {{DateToday}}       </h6>  
+    <ion-list>
+     
+        <ion-grid  >
+
+          <ion-row>
+         
+              <ion-col size="7" text-center>
+               <b style="font-size:14px">ชื่อ-นามสกุล</b> 
+              </ion-col>
+              <ion-col text-center>
+               <b style="font-size:14px">จำนวนเงิน</b>  
+              </ion-col>
+            </ion-row>
+  
+  
+          <ion-item *ngFor="let item of SumAmountList">
+              <ion-label>
+          <ion-row  >
+      
+            <ion-col size="4" class="font1">
+              {{item.PersonName}}
+              <p>{{item.AccountNo}}</p>
+            </ion-col>
+            <ion-col text-right class="font1">
+              {{item.Amount |currency:' '}}
+            </ion-col>
+          </ion-row>
+        </ion-label>
+      </ion-item>
+          </ion-grid>
+     
+     
+    </ion-list>
+    
+  
+    </div>
+
+</ion-content>

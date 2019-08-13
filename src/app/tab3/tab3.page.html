@@ -1,0 +1,119 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-title class="font1" style="height: 100px">
+          <ion-item color="primary" >
+              <ion-thumbnail slot="start">
+                  <img src="assets/img/company.png" width="80px" height="100px">
+          
+                </ion-thumbnail>
+           
+              <ion-label >
+               <h3 class="font1">บริษัท : {{VFName}}</h3>
+               <h4 class="font1">รหัสผู้ใช้งาน : {{UserId}}</h4>
+               <h4 class="font1">สาขา : {{BranchName}}</h4>
+              </ion-label>
+           
+              
+          
+            </ion-item>
+   
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="Bg"  >
+
+      <ion-refresher slot="fixed"    class="Bg"
+  (ionRefresh)="ionRefresh($event)" 
+  (ionPull)="ionPull($event)" 
+  (ionStart)="ionStart($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="กำลังดึงข้อมูล...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+<br><br><br>
+   
+    <div>
+
+            
+      <ion-card  class="Card font1">
+          
+        
+          <ion-card-content>
+            <br>
+           
+           <p text-center>ยอดที่เก็บได้วันนี้</p><br>
+           <h1 text-center >{{amount |currency:' '}}</h1><br>
+           <h2 text-center>บาท</h2>
+          
+          </ion-card-content>
+        </ion-card>
+
+       
+        
+        <p style="font-size: 13px" text-center class="font1">ข้อมูล ณ  {{DateToday}} เวลา {{Time}} น.</p>
+      <!--<div text-center>
+            <ion-icon   style="font-size: 13px" (click)="refresh()" name="refresh"></ion-icon>
+        </div>
+       -->  
+
+
+<br>
+<div text-center class="font1">
+ <h5> <u>จำนวนรับชำระวันนี้  {{countacc}}  รายการ</u></h5>
+</div>
+
+
+        <div padding class="font1">
+        
+            <ion-grid>
+               
+
+
+
+                <ion-row>
+                  <ion-col size="1">
+
+                  </ion-col>
+                  <ion-col size="3">
+
+                      <h4>รับชำระ </h4>
+           <!--         <h6>เงินฝาก  </h6>
+                      <h6>เงินหุ้น  </h6>-->  
+                  </ion-col>
+        
+                  <ion-col size="5">
+                   <h4 text-right>{{amount |currency:' '}}</h4>
+                <!--  <h5 text-right>4,000.00</h5>
+                   <h5 text-right>1,000.50</h5>--> 
+                  </ion-col>
+        
+                  <ion-col>
+                      <h4>บาท</h4>
+                    <!--  <h5>บาท</h5>
+                      <h5>บาท</h5>--> 
+                  </ion-col>
+               
+        
+                </ion-row>
+
+
+
+
+                
+            </ion-grid>
+        
+        
+          
+        </div>
+
+  </div>
+  
+  
+  
+  </ion-content>
+  
